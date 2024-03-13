@@ -1,6 +1,6 @@
 // ex1
 
-const time = 598099
+const time = 566
 
 // 1week 5days 
 // 4days 10hours
@@ -28,16 +28,14 @@ const timeFormat = (remainedTime) => {
         const minuteMark = Math.floor((remainedTime % hour) / minute) > 1 ? 'minutes' : 'minute'
         return `${Math.floor(remainedTime / hour)} ${hourMark} ${Math.floor((remainedTime % hour) / minute)} ${minuteMark}`
     }
-    if (remainedTime / minute < 60) {
         return `less than an hour`
-    }
 }
 
 console.log(timeFormat(time))
 
 
 
-// ex2
+// // ex2
 
 class Rock {
     constructor(options) {
@@ -88,7 +86,7 @@ ironMaiden.caracteristics()
 
 
 
-// ex3
+// // ex3
 
 const soad = {
     name: 'System of a Down',
@@ -108,7 +106,7 @@ console.log(subgenre)
 
 
 
-// ex4
+// // ex4
 
 const operation = (a, b) => {
     const op1 = Math.pow(a, b)
