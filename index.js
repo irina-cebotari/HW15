@@ -19,17 +19,20 @@ const timeFormat = (remainedTime) => {
         return `${Math.floor(remainedTime / week)} ${weekMark} ${Math.floor((remainedTime % week) / day)} ${dayMark}`
     }
     if (remainedTime / day >= 1) {
-        const dayMark = Math.floor(remainedTime / day) > 1 ? 'days' : 'day'
+        const dayMark = Math.floor(remainedTime / day) !== 1 ? 'days' : 'day'
         const hourMark = Math.floor((remainedTime % day) / hour) > 1 ? 'hours' : 'hour'
         return `${Math.floor(remainedTime / day)} ${dayMark} ${Math.floor((remainedTime % day) / hour)} ${hourMark}`
     }
     if (remainedTime / hour >= 1) {
-        const hourMark = Math.floor(remainedTime / hour) > 1 ? 'hours' : 'hour'
+        const hourMark = Math.floor(remainedTime / hour) !== 1 ? 'hours' : 'hour'
         const minuteMark = Math.floor((remainedTime % hour) / minute) > 1 ? 'minutes' : 'minute'
         return `${Math.floor(remainedTime / hour)} ${hourMark} ${Math.floor((remainedTime % hour) / minute)} ${minuteMark}`
     }
+    if (remainedTime < hour) {
         return `less than an hour`
+    }
 }
+
 
 console.log(timeFormat(time))
 
@@ -96,7 +99,7 @@ const soad = {
     subgenre: 'Alernative Metal, Nu Metal'
 }
 
-const {name, country, foundationYear, subgenre} = soad
+const { name, country, foundationYear, subgenre } = soad
 
 console.log(soad)
 console.log(name)
@@ -113,9 +116,9 @@ const operation = (a, b) => {
     const op2 = Math.sqrt(a + b)
     const op3 = Math.sign(a - b)
     const op4 = Math.abs(a - b)
-  
+
     return [op1, op2, op3, op4];
-  }
-  
-  const [op1, op2, op3, op4] = operation(3, 6);
-  console.log(operation(3, 6))
+}
+
+const [op1, op2, op3, op4] = operation(3, 6);
+console.log(operation(3, 6))
